@@ -11,8 +11,8 @@ import { FoodType } from '../../types'
 interface DashboardState {
   foods: Array<FoodType>
   editingFood: FoodType
-  modalOpen: Boolean
-  editModalOpen: Boolean
+  modalOpen: boolean
+  editModalOpen: boolean
 }
 
 const Dashboard = (): JSX.Element => {

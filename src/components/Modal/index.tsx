@@ -4,7 +4,7 @@ import ReactModal from 'react-modal'
 interface ModalProps {
   isOpen: boolean
   setIsOpen: () => void
-  children: React.FC
+  children: JSX.Element
 }
 
 const Modal = (props: ModalProps) => {
