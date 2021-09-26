@@ -6,15 +6,7 @@ import Food from '../../components/Food/index'
 import ModalAddFood from '../../components/ModalAddFood'
 import ModalEditFood from '../../components/ModalEditFood'
 import { FoodsContainer } from './styles'
-
-interface FoodType {
-  id: number
-  name: string
-  description: string
-  price: string
-  available: boolean
-  image: string
-}
+import { FoodType } from '../../types'
 
 interface DashboardState {
   foods: Array<FoodType>
