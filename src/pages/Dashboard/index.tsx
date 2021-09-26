@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 import Header from '../../components/Header'
 import api from '../../services/api'
-import Food from '../../components/Food'
+import Food from '../../components/Food/index'
 import ModalAddFood from '../../components/ModalAddFood'
 import ModalEditFood from '../../components/ModalEditFood'
 import { FoodsContainer } from './styles'
@@ -39,14 +39,15 @@ const Dashboard = (): JSX.Element => {
   })
 
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await api.get('/foods')
+    const loadFoods = async () => {
+      const response = await api.get<FoodType[]>('/foods')
+      const data = response.data
       setState({
         ...state,
-        foods: response.data,
+        foods: data,
       })
     }
-    fetchData()
+    loadFoods()
   }, [])
 
   const handleAddFood = async (food: FoodType) => {
